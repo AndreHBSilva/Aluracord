@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./aluracord",
+    "checkJs": true,
+    "jsx": "react",
+    "resolveJsonModule": true
+  }
+}

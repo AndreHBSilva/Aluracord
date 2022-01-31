@@ -1,4 +1,5 @@
 import { Box, Button, Text, TextField, Image } from '@skynexui/components';
+import React from 'react';
 import appConfig from '../config.json';
 
 function GlobalStyle() {
@@ -60,7 +61,11 @@ function Titulo(props) {
 } */
 
 export default function PaginaInicial() {
-  const username = 'AndreHBSilva';
+  //const username = 'AndreHBSilva';
+
+
+  // @ts-ignore
+  const [username, setUsername] = React.useState('');
 
   return (
     <>
@@ -69,6 +74,7 @@ export default function PaginaInicial() {
         styleSheet={{
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           backgroundColor: appConfig.theme.colors.primary[500],
+          // @ts-ignore
           backgroundImage: 'url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)',
           backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
         }}
@@ -103,6 +109,21 @@ export default function PaginaInicial() {
 
             <TextField
               fullWidth
+              // @ts-ignore
+              textFieldColors={{
+                neutral: {
+                  textColor: appConfig.theme.colors.neutrals[200],
+                  mainColor: appConfig.theme.colors.neutrals[900],
+                  mainColorHighlight: appConfig.theme.colors.primary[500],
+                  backgroundColor: appConfig.theme.colors.neutrals[800],
+                },
+              }}
+              onChange={(event) => setUsername(event.target.value)}
+            />
+            <TextField 
+              fullWidth 
+              type="password"
+              // @ts-ignore
               textFieldColors={{
                 neutral: {
                   textColor: appConfig.theme.colors.neutrals[200],
@@ -140,6 +161,7 @@ export default function PaginaInicial() {
               borderColor: appConfig.theme.colors.neutrals[999],
               borderRadius: '10px',
               flex: 1,
+              // @ts-ignore
               minHeight: '240px',
             }}
           >
